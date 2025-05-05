@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-      uses: actions/checkout@v3
+    - name: Checkout Code
+    uses: actions/checkout@v3
 
     - name: Copy index.html via SSH
     uses: appleboy/scp-action@v0.1.4
@@ -20,4 +20,4 @@ jobs:
       username: ${{ secrets.SERVER_USER }}
       key: ${{ secrets.DEPLOY_KEY }}
       source: "index.html"
-       target: "/var/www/simple-site"
+      target: "/var/www/simple-site"
